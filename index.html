@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magif System – Liste BDE</title>
+
+  <style>
+    body { 
+      font-family: 'Poppins', sans-serif; 
+      margin: 0; 
+      background: linear-gradient(135deg, #e3f2fd, #e8eaf6);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      padding: 70px 20px;
+      text-align: center;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+      animation: fade-header 1.2s ease;
+    }
+    @keyframes fade-header {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    nav {
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    }
+    nav a {
+      text-decoration: none;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: 600;
+      color: #333;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      background: #2575fc;
+      color: white;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 20px;
+      animation: fade-section 1s ease;
+    }
+    @keyframes fade-section {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h2 { text-align: center; color: #2575fc; }
+
+    /* MEMBRES */
+    .membres {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .carte {
+      background: white;
+      padding: 20px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .carte:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.15);
+    }
+    .carte img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 10px;
+      transition: 0.3s;
+    }
+    .carte img:hover {
+      transform: scale(1.07);
+    }
+
+    /* CREPES FORM */
+    form {
+      max-width: 400px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+    input, select, button {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 12px;
+      border: 1px solid #bbb;
+    }
+    button {
+      background: #2575fc;
+      color: white;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #6a11cb;
+    }
+    .success {
+      display: none;
+      background: #d4edda;
+      color: #155724;
+      padding: 12px;
+      margin-top: 12px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    /* HOTLINE BUTTON */
+    .hotline-btn {
+      display: block;
+      text-align: center;
+      width: 200px;
+      margin: 40px auto;
+      background: #ff1744;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(255,23,68,0.4);
+      transition: 0.3s;
+    }
+    .hotline-btn:hover {
+      background: #d50000;
+      transform: scale(1.08);
+    }
+
+    /* SHOTGUN BUTTON */
+    .shotgun-btn {
+      display: block;
+      text-align: center;
+      width: 250px;
+      margin: 40px auto;
+      background: #2575fc;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      transition: 0.3s;
+    }
+    .shotgun-btn:hover {
+      background: #6a11cb;
+      transform: scale(1.08);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Magif System</h1>
+  <p>Le futur BDE qui va régaler la chienneté</p>
+</header>
+
+<nav>
+  <a href="#accueil">Accueil</a>
+  <a href="#membres">Membres</a>
+  <a href="hotline.html">Hotline</a>
+</nav>
+
+<section id="countdown-section" style="margin-top:80px; text-align:center;">
+  <h2 style="color:#2575fc; font-size:2.5em; font-weight:600;">
+    SHOTGUN POUR LA SOIRÉE DE LA LISTE
+  </h2>
+
+  <div id="countdown" 
+       style="
+         text-align:center;
+         font-size:3em;
+         font-weight:700;
+         margin-top:25px;
+         padding:20px;
+         background:white;
+         width:300px;
+         margin:auto;
+         border-radius:15px;
+         box-shadow:0 6px 20px rgba(0,0,0,0.1);
+       ">
+    --
+  </div>
+
+  <a id="shotgun-link" 
+     href="https://forms.viarezo.fr/forms/3mnb4j" 
+     class="shotgun-btn" 
+     style="
+       display:none; 
+       margin-top:25px;
+       background: #2575fc; 
+       color: white; 
+       font-weight: 700;
+       padding: 12px 25px;
+       border-radius: 10px;
+       text-decoration: none;
+       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+       transition: 0.3s;
+     ">
+    📋 Accéder au formulaire Shotgun
+  </a>
+</section>
+
+<script>
+  function updateCountdown() {
+    const now = new Date();
+    
+    // Target date: tomorrow at 13:00
+    const target = new Date();
+    target.setDate(target.getDate() + 1);
+    target.setHours(13, 0, 0, 0);
+
+    const diff = target - now;
+
+    if (diff <= 0) {
+      document.getElementById("countdown-section").querySelector("h2").innerHTML =
+        "SHOTGUN OUVERT !!! 🔥🔥🔥";
+      document.getElementById("countdown").innerHTML = "GO GO GO !!!";
+      
+      // Display the shotgun link
+      document.getElementById("shotgun-link").style.display = 'inline-block';
+      return;
+    }
+
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+      `${hours}h ${minutes}m ${seconds}s`;
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+
+<section id="accueil">
+  <h2>Bienvenue sur notre site !</h2>
+  <p style="text-align:center;">
+    Voici la liste la plus stylée, la plus motivée et la plus TIGRÉE de l’année 😎🔥  
+    On régale, on anime, et on RPZ 💜💙
+  </p>
+
+  <a class="hotline-btn" href="hotline.html">📞 Accéder à la Hotline</a>
+</section>
+
+<section id="membres">
+  <h2>Présentation des membres</h2>
+  <div class="membres">
+    <div class="carte"><img src="img/lucien.jpg"><h3>Lucien</h3><p>Président</p></div>
+    <div class="carte"><img src="img/arthur.jpg"><h3>Arthur</h3><p>Vice-Président</p></div>
+    <div class="carte"><img src="img/thibault.jpg"><h3>Thibault</h3><p>Secrétaire Général</p></div>
+    <div class="carte"><img src="img/nathan.jpg"><h3>Nathan</h3><p>Trésorier</p></div>
+    <div class="carte"><img src="img/raphael.jpg"><h3>Raphael</h3><p>Vice-trésorier</p></div>
+    <div class="carte"><img src="img/valentin.jpg"><h3>Valentin</h3><p>Com / Design</p></div>
+  </div>
+</section>
+
+
+</body>
+</html>
